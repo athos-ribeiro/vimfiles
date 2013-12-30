@@ -230,15 +230,19 @@ if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
 
-    colorscheme molokai
+    colorscheme railscasts
     set guitablabel=%M%t
     set lines=40
     set columns=115
 
-    if has("gui_gnome")
+    "mexi daqui ateh o if
+        "set term=gnome-256color
+        "colorscheme railscasts
+        "set guifont=Monospace\ Bold\ 12
+    if has("gui_gnome") || has("gui_gtk") || has("gui_gtk2")
         set term=gnome-256color
-        colorscheme molokai
-        set guifont=Monospace\ Bold\ 12
+        colorscheme railscasts
+        set guifont=Monospace\ Regular\ 11
     endif
 
     if has("gui_mac") || has("gui_macvim")
@@ -257,7 +261,7 @@ else
     "set railscasts colorscheme when running vim in gnome terminal
     if $COLORTERM == 'gnome-terminal'
         set term=gnome-256color
-        colorscheme molokai
+        colorscheme railscasts
     else
         if $TERM == 'xterm'
             set term=xterm-256color
@@ -432,20 +436,20 @@ let g:user_zen_settings = {
  \}
 
 " when press { + Enter, the {} block will expand.
-imap {<CR> {}<ESC>i<CR><ESC>O
+"imap {<CR> {}<ESC>i<CR><ESC>O
 
 " NERDTree settings
 nmap wm :NERDTree<cr>
 let NERDTreeIgnore=['\.swp$']
 
-nnoremap <Esc>A <up>
-nnoremap <Esc>B <down>
-nnoremap <Esc>C <right>
-nnoremap <Esc>D <left>
-inoremap <Esc>A <up>
-inoremap <Esc>B <down>
-inoremap <Esc>C <right>
-inoremap <Esc>D <left>
+"nnoremap <Esc>A <up>
+"nnoremap <Esc>B <down>
+"nnoremap <Esc>C <right>
+"nnoremap <Esc>D <left>
+"inoremap <Esc>A <up>
+"inoremap <Esc>B <down>
+"inoremap <Esc>C <right>
+"inoremap <Esc>D <left>
 
 if has("balloon_eval")
   set noballooneval
